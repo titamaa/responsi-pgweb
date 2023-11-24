@@ -19,17 +19,24 @@ Sumber data :
 Komponen :
 
 Tampilan Home
+
 <img src="assets/img/tamhom.jpg" width="100">
 
 Tampilan Map
+
 <img src="assets/img/mapvw.jpg" width="100">
+
+Tampilan About
+
+<img src="assets/img/abt.jpg" width="100">
+
+Tampilan Grafis
+
+<img src="assets/img/grafis.jpg" width="100">
 
 Tampilan About
 <img src="assets/img/abt.jpg" width="100">
 
-Tampilan Grafis
-Tampilan About
-<img src="assets/img/grafis.jpg" width="100">
 
 
 <img src="assets/img/datars.jpg" width="100">
