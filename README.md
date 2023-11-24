@@ -35,9 +35,11 @@ Tampilan Grafis
 <img src="assets/img/grafis.jpg" width="100">
 
 Tampilan About
+
 <img src="assets/img/abt.jpg" width="100">
 
 
+Komponen penyusun 
 
 <img src="assets/img/datars.jpg" width="100">
 
