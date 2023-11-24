@@ -20,29 +20,29 @@ Komponen :
 
 Tampilan Home
 
-<img src="assets/img/tamhom.jpg" width="100">
+<img src="assets/img/tamhom.jpg" width="500">
 
 Tampilan Map
 
-<img src="assets/img/mapvw.jpg" width="100">
+<img src="assets/img/mapvw.jpg" width="500">
 
 Tampilan About
 
-<img src="assets/img/abt.jpg" width="100">
+<img src="assets/img/abt.jpg" width="500">
 
 Tampilan Grafis
 
-<img src="assets/img/grafis.jpg" width="100">
+<img src="assets/img/grafis.jpg" width="500">
 
 Tampilan About
 
-<img src="assets/img/abt.jpg" width="100">
+<img src="assets/img/abt.jpg" width="500">
 
 
 Komponen penyusun 
 
-<img src="assets/img/datars.jpg" width="100">
+<img src="assets/img/datars.jpg" width="500">
 
-<img src="assets/img/coding.jpg" width="100">
+<img src="assets/img/coding.jpg" width="500">
 
-<img src="assets/img/geos.jpg" width="100">
+<img src="assets/img/geos.jpg" width="500">
