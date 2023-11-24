@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <title>WEB GIS SLEMAN</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" integrity="sha512-GffPMF5VSCkp3IN6KlGHiGJFYCX3rZ3dZKOiXWdHbNs3la1x6qptL1xeGKgTK1DNDdRZuo4hddpuXZJ0vnRfYg==" crossorigin=""/>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js" integrity="sha512-ZGIeI0RMYuJcg2zHDGGUvoBRPTIrnZt41E9kdpJFp1EgL3+fu4+oZvsa7wyfBW+VB0G5XaR3p0WH+nH2DNQ7Gg==" crossorigin=""></script>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+   <!-- Fontawesome CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+<!-- Search CSS Library -->
+<link rel="stylesheet" href="assets/plugins/leaflet-search/leaflet-search.css">
+
+<!-- Geolocation CSS Library for Plugin -->
+<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css">
+
+<!-- Leaflet Mouse Position CSS Library -->
+<link rel="stylesheet" href="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.css">
+
+<!-- Leaflet Measure CSS Library -->
+<link rel="stylesheet" href="assets/plugins/leaflet-measure/leaflet-measure.css">
+
+<!-- EasyPrint CSS Library -->
+<link rel="stylesheet" href="assets/plugins/leaflet-easyprint/easyPrint.css">
+
+<!-- Marker Cluster -->
+<link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.Default.css">
+
+  <style>
+      html, body, #map {
+        width: 100%;
+        height: 99.5%;
+        padding-top: 28px;
+      }
+
+  </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Search JavaScript Library -->
+<script src="assets/plugins/leaflet-search/leaflet-search.js"></script>
+
+<!-- Geolocation Javascript Library -->
+<script
+  src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+
+<!-- Leaflet Mouse Position JavaScript Library -->
+<script src="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.js"></script>
+
+<!-- Leaflet Measure JavaScript Library -->
+<script src="assets/plugins/leaflet-measure/leaflet-measure.js"></script>
+
+<!-- EasyPrint JavaScript Library -->
+<script src="assets/plugins/leaflet-easyprint/leaflet.easyPrint.js"></script>
+
+<!-- Marker Cluster -->
+<script src="assets/plugins/leaflet-markercluster/leaflet.markercluster.js"></script>
+<script src="assets/plugins/leaflet-markercluster/leaflet.markercluster-src.js"></script>
+
+
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="Home.html"><b><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;PETA SEBARAN COVID19 TAHUN 2021</b></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#legendModal"><i class="fas fa-layer-group"></i> Legenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#infoModal"><i class="fas fa-info-circle"></i> Info</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End of Topbar -->
+
+    <!-- Modal Info -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header alert-info">
+            <h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-info-circle"></i> Info</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Pastikan untuk memeriksa sumber informasi resmi, seperti situs web pemerintah daerah atau organisasi kesehatan terkait, untuk mendapatkan informasi yang paling akurat dan terkini mengenai COVID-19 di Kabupaten Sleman.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal Info -->
+
+    <!-- Modal Legend -->
+    <div class="modal fade" id="legendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header alert-info">
+            <h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-layer-group"></i> Legenda</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/img/hp.png" alt="Rumah Sakit" style="width: 30px; height: 30px; opacity: 0.7;"> Rumah Sakit Rujukan Covid<p>
+            <p></p><b>Tingkat Kasus Covid</b><br>
+            <svg width="40" height="20">
+              <rect width="40" height="20" style="fill:#67000d;stroke-width:1;stroke:rgb(14, 13, 13);opacity:0.7" />
+            </svg> Tinggi   (> 4000 Jiwa)<br>
+            <svg width="40" height="20">
+              <rect width="40" height="20" style="fill:#c90606;stroke-width:1;stroke:rgb(7, 7, 7);opacity:0.7" />
+            </svg> Sedang (> 3000 Jiwa)<br>
+            <svg width="40" height="20">
+              <rect width="40" height="20" style="fill:#fb7050;stroke-width:1;stroke:rgb(7, 7, 7);opacity:0.7" />
+            </svg> Sedang (> 2000 Jiwa)<br>
+            <svg width="40" height="20">
+              <rect width="40" height="20" style="fill:#ebabab;stroke-width:1;stroke:rgb(10, 10, 10);opacity:0.7" />
+            </svg> Rendah (> 1000 Jiwa)
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal Legend -->
+
+<script>
+
+      var map = L.map('map').setView([-7.7956, 110.3695], 5);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}', {
+            maxZoom: 5,
+        }).addTo(map);
+
+/* Tile Basemap */
+var basemap1 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' //menambahkan nama//
+});
+
+var basemap2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/ { z } / { y } / { x }', {
+    attribution: 'Tiles &copy; Esri | <a href="Latihan WebGIS" target="_blank">'
+});
+
+var basemap3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{ x }', {
+    attribution: 'Tiles & copy; Esri | <a href="Lathan WebGIS" target="_blank">'
+
+});
+    
+var basemap4 = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org / ">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+});
+
+basemap1.addTo(map);
+
+var baseMaps = {
+            "OpenStreetMap": basemap1,
+            "Esri World Street": basemap2,
+            "Esri Imagery": basemap3,
+            "Stadia Dark Mode": basemap4,
+        };
+
+        L.control.layers(baseMaps).addTo(map);
+
+        var markers = L.layerGroup(); 
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var data = JSON.parse(this.responseText);
+
+                data.forEach(function (row) {
+                        // Buat ikon dengan gambar rumah sakit
+                        var hospitalIcon = L.icon({
+                          iconUrl: 'assets/img/hp.png', 
+                          iconSize: [50, 32],
+                          iconAnchor: [16, 32],
+                        });
+                        var marker = L.marker([row.Latitude, row.Longitude], { icon: hospitalIcon }).addTo(markers);
+                    marker.bindPopup("<strong>" + row.Kecamatan + "<strong><br>" + row.Rumahsakit );
+                });
+
+                markers.addTo(map); // Add the layer group to the map
+                map.fitBounds(markers.getBounds()); // Fit the map to the bounds of the markers
+            }
+        };
+
+        xmlhttp.open("GET", "index.php", true); // Replace "get_data.php" with your PHP script that fetches data
+        xmlhttp.send();
+
+      // Create a GeoJSON layer for polygon data
+      var wfsgeoserver1 = L.geoJson(null, {
+        style: function (feature) {
+          // Adjust this function to define styles based on your polygon properties
+          var value = feature.properties.KONFIRMASI; // Change this to your actual property name
+          return {
+            fillColor: getColor(value),
+            weight: 2,
+            opacity: 1,
+            color: "red",
+            dashArray: "3",
+            fillOpacity: 0.7,
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          // Adjust the popup content based on your polygon properties
+          var content =
+            "Kecamatan: " +
+            feature.properties.KECAMATAN +
+            "<br>" +
+            "Penderita Covid: " +
+            feature.properties.KONFIRMASI +
+            "<br>";
+
+          layer.bindPopup(content);
+        },
+      });
+
+      // Fetch GeoJSON data from geoserver.php
+      $.getJSON("wfsgeoserver1.php", function (data) {
+        wfsgeoserver1.addData(data);
+        wfsgeoserver1.addTo(map);
+        map.fitBounds(wfsgeoserver1.getBounds());
+      });
+
+
+    /* Image Watermark */
+    L.Control.Watermark = L.Control.extend({
+      onAdd: function (map) {
+        var img = L.DomUtil.create('img');
+        img.src = 'assets/img/logo/LOGO_SIG.png';
+        img.style.width = '150px';
+        return img;
+      }
+    });
+
+    L.control.watermark = function (opts) {
+      return new L.Control.Watermark(opts);
+    }
+
+    L.control.watermark({ position: 'bottomright' }).addTo(map);
+
+/*Plugin Search */
+var searchControl = new L.Control.Search({
+    position:'topleft',
+    layer: wfsgeoserver1, //Nama variabel layer
+    propertyName: 'KECAMATAN', //Field untuk pencarian
+    marker: false,
+    moveToLocation: function(latlng, title, map) {
+        var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+        map.setView(latlng, zoom);
+    }
+});
+searchControl.on('search:locationfound', function(e) {
+    e.layer.setStyle({
+        fillColor: '#ffff00',
+        color: '#0000ff'
+    });
+}).on('search:collapse', function(e) {
+    featuresLayer.eachLayer(function(layer) {
+        featuresLayer.resetStyle(layer);
+    });
+});
+map.addControl(searchControl);
+
+
+
+/*Plugin Geolocation */
+var locateControl = L.control.locate({
+    position: 'topleft',
+    drawCircle: true,
+    follow: true,
+    setView: true,
+    keepCurrentZoomLevel: false,
+    markerStyle: {
+        weight: 1,
+        opacity: 0.8,
+        fillOpacity: 0.8,
+    },
+    circleStyle: {
+        weight: 1,
+        clickable: false,
+    },
+    icon: "fas fa-crosshairs",
+    metric: true,
+    strings: {
+        title: "Click for Your Location",
+        popup: "You're here. Accuracy {distance} {unit}",
+        outsideMapBoundsMsg: "Not available"
+    },
+    locateOptions: {
+        maxZoom: 16,
+        watch: true,
+        enableHighAccuracy: true,
+        maximumAge: 10000,
+        timeout: 10000
+    },
+}).addTo(map);
+
+/*Plugin Mouse Position Coordinate */
+L.control.mousePosition({position: "bottomright", separator: ",", prefix: "Point Coodinate: " }).addTo(map);
+
+
+/*Plugin Measurement Tool */
+var measureControl = new L.Control.Measure({
+position:"topleft",
+primaryLengthUnit: "meters",
+secondaryLengthUnit: "kilometers",
+primaryAreaUnit: "hectares",
+secondaryAreaUnit: "sqmeters",
+activeColor: "#FF0000",
+completedColor: "#00FF00"
+});
+measureControl.addTo(map);
+
+/*Plugin EasyPrint */
+L.easyPrint({
+title: "Print"
+}).addTo(map);
+
+// Function to determine color based on 'Village' attribute
+      function getColor(value) {
+        return value > 4000
+          ? "#67000d"
+          : value > 3000
+          ? "#c90606"
+          : value > 2000
+          ? "#fb7050"
+          : value > 1000
+          ? "#ebabab"
+          : "#fff5f0";
+      }
+
+  </script>
+</body>
+
+</html>

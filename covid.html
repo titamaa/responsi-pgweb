@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>COVID SLEMAN</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome CSS (contoh menggunakan Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-r3udLJ8hUpYL41fohxxsOFdwJBDK9pI5EPyN1U8YO3FhxsckPVB5iXEWfQMIjBy2" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/masonry/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      /* Tambahkan gaya CSS untuk rectangle */
+  .rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Sesuaikan tinggi rectangle sesuai kebutuhan */
+  }
+
+  .rectangle {
+    background-color: rgb(201, 25, 25); /* Ganti dengan warna yang diinginkan */
+    width: 90%; /* Sesuaikan lebar rectangle sesuai kebutuhan */
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Sesuaikan dengan kebutuhan */
+  }
+
+  .rectangle-text {
+    color: #fff; /* Ganti dengan warna teks yang diinginkan */
+    font-size: 30px; /* Sesuaikan ukuran teks sesuai kebutuhan */
+    font-weight: bold;
+  }
+
+    </style>
+
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html"><i class="fa-solid fa-magnifying-glass-chart"></i> About Covid</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true" data-bs-toggle="modal" data-bs-target="#infoModal"><i
+                                class="fa-solid fa-circle-info"></i> Info</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="infoModalLabel"><i class="fa-solid fa-circle-info"></i>
+                            Info</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Pastikan untuk memeriksa sumber informasi resmi, seperti situs web pemerintah daerah atau organisasi kesehatan terkait, untuk mendapatkan informasi yang paling akurat dan terkini mengenai COVID-19 di Kabupaten Sleman.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+            
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+<main class="container py-5">
+  <div class="rectangle-container">
+    <p class="rectangle-text"><h1>|CORONA VIRUS SLEMAN|</h1></p>
+  </div>
+  <p class="lead">Corona Virus Disease 2019 atau yang biasa disingkat COVID-19 adalah penyakit menular yang disebabkan oleh SARS-CoV-2.<br>Penderita COVID-19 dapat mengalami demam, batuk kering, dan kesulitan bernafas. Penularan COVID-19 ialah melalui kontak dengan droplet saluran napas penderita. Droplet merupakan partikel kecil dari mulut penderita yang mengandung kuman penyakit, yang dihasilkan pada saat batuk, bersin, atau berbicara. Droplet dapat melewati sampai jarak tertentu (biasanya 1 meter).</p>
+
+  <p>Sigap, Tanggap, Bersama Sleman, Brantas Covid19</p>
+
+  <hr class="my-5">
+
+  <div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card">
+        <img src="assets/img/lockdn.png" class="bd-placeholder-img card-img-top" alt="Image cap">
+        <div class="card-body">
+          <h5 class="card-title">LOCKDOWN</h5>
+          <p class="card-text">
+            Lockdown COVID-19 bisa diibaratkan sebagai "staycation paksa" di rumah. Liburan di rumah sendiri, tanpa opsi untuk pergi ke destinasi impian atau memesan layanan kamar. Kamar mandi Anda menjadi tempat wisata utama, dan dapur adalah restoran bintang lima Anda. Sebuah perjalanan tanpa pergi ke mana-mana!</p>
+          <p class="card-text"><small class="text-body-secondary">Image: https://berita.99.co/gambar-spanduk-unik-lockdown-corona/</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card p-3">
+        <figure class="p-3 mb-0">
+          <blockquote class="blockquote">
+            <p>DEKATI ORANG SLEMAN - HINDARI SALAMAN.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer mb-0 text-body-secondary">
+            Someone famous in <cite title="Source Title">Sleman - </cite>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card">
+        <img src="assets/img/sosdis.jpg" class="bd-placeholder-img card-img-top" alt="Image cap">
+        <div class="card-body">
+          <h5 class="card-title">SOCIAL DISTANCING</h5>
+          <p class="card-text">Social distancing saat pandemi COVID-19 adalah tarian eksklusif di mana setiap orang berusaha untuk menghindari gerakan langkah yang dilakukan oleh virus, sementara tetap terkoneksi secara virtual dalam jaringan WiFi.</p>
+          <p class="card-text"><small class="text-body-secondary">Image:https://www.tagar.id/foto2/1885/Foto+Kumpulan+Meme+Lucu+Social+Distancing+di+Indonesia/0</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card text-bg-primary text-center p-3">
+        <figure class="mb-0">
+          <blockquote class="blockquote">
+            <p><b>LAYANAN SLEMAN TANGGAP COVID-19</b></p>
+          </blockquote>
+        </figure>
+        <div class="rectangle-container">
+            <div class="rectangle">
+              <p class="rectangle-text"> 0878 1999 3434</p>
+            </div>
+          </div>
+          <div class="rectangle-container">
+            <div class="rectangle">
+              <p class="rectangle-text"> 0274 860 9000</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card p-3 text-end">
+          <figure class="mb-0">
+            <blockquote class="blockquote">
+              <p>"Sleman Kuat Lawan COVID, Social Distancing Dulu, Ketemu Nanti!".</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-body-secondary">
+              Someone famous in <cite title="Source Title">Seyegan</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card">
+        <img src="assets/img/sskcov.jpg" class="bd-placeholder-img card-img-top" alt="Image cap">
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+            <img src="assets/img/covmem.jpg" class="bd-placeholder-img card-img-top" alt="Image cap">
+        </div>
+      </div>
+
+</main>
+ 
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script></body>
+</html>
